@@ -1,6 +1,7 @@
 import { Bars3Icon, MoonIcon } from '@heroicons/react/20/solid'
 import React from 'react'
 import SubHeader from './subheader'
+import SearchBox from './searchbox'
 const Header = () => {
   return (
     <section className='md:p-10 p-6 w-full gap-6 flex flex-col items-center'>
@@ -16,6 +17,7 @@ const Header = () => {
         </div>
     </header>
     <SubHeader />
+    <SearchBox />
     </section>
   )
 }
