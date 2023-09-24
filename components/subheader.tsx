@@ -7,7 +7,7 @@ const SubHeader = () => {
     const pathname=usePathname();
   return (
    <div className='w-4/5 md:w-3/5'>
-    <div className='flex gap-4 justify-around'>
+    <div className='grid md:grid-flow-col grid-cols-2 gap-6'>
        
        {
         Categories.map((category)=>(
