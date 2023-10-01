@@ -1,4 +1,5 @@
 'use client'
+import Pagination from "@/components/pagination";
 import { AllData, QueryParameters , modifiedParameters } from "@/typing";
 import { cache } from "react";
 
@@ -22,8 +23,8 @@ export const getData=async ({queryparams,isdynamic}: QueryParameters)=>{
     //sorting data based on their images have or have not
     const withoutImages=result.data.filter((item)=> item.image === null);
     const withImages= result.data.filter((item)=> item.image!==null);
-    const newResponse= [...withImages, ...withoutImages];
-    console.log('alldata',newResponse)
+    const newResponse= {data:[...withImages, ...withoutImages], pagination:result.pagination };
+    // console.log('alldata',newResponse)
     return newResponse;
 }
 

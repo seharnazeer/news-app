@@ -1,36 +1,36 @@
 'use client'
-import Image from 'next/image'
-import Header from '@/components/header'
+
 import { getData } from '@/lib/api'
 import { useEffect, useState } from 'react'
 import { Categories } from '@/lib/constants'
 import NewsCard from '@/components/newsCard'
-import { Article } from '@/typing'
-import { parseCookie } from 'next/dist/compiled/@edge-runtime/cookies'
+import { AllData, Article } from '@/typing'
+
+import Pagination from '@/components/pagination'
 export default function Home() {
-  const [data,setData]=useState<Article[]>([]);
-  const getUserData=async()=>{
-    const apidata : any=await getData({queryparams:{offset:'0',source: 'cnn,bcn',keywords:'',categories:Categories.join(',')},isdynamic:false})
-    setData(apidata);
-  }
+  console.clear();
+  const [data,setData]=useState<AllData>({pagination:{offset:0,count:0,limit:0,total:0},data: []});
+  const [offset,setoffset]=useState(0);
   useEffect(()=>{ 
     const getdata=async()=>{
-   const alldata= await getData({queryparams:{offset:'0',source: 'cnn,bcn',keywords:'',categories:Categories.join(',')},isdynamic:false})
+   const alldata= await getData({queryparams:{offset:offset.toString(),source: 'cnn,bcn',keywords:'',categories:Categories.join(',')},isdynamic:false})
    setData(alldata);
     }
     getdata();
-  },[])
+  },[offset])
 
   return (
 //  <Header />
-<div className='grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
+<section className='flex flex-col'>
+<div className='grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full'>
   {
-    data.map((elem)=>(
-      <NewsCard image={elem.image} title={elem.title} description={elem.description} published_at='hsgf7e67eyu' />
+    data.data.map((elem,index)=>(
+      <NewsCard key={index} image={elem.image} title={elem.title} description={elem.description} published_at={elem.published_at} />
     ))
  
   }
- 
-</div>
+ </div>
+ <Pagination offset={offset} setoffset={setoffset} />
+</section>
   )
 }

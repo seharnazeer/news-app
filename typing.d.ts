@@ -1,15 +1,16 @@
 export interface QueryParameters{
-    queryparams:{Parameters}
+    queryparams:Parameters
     isdynamic: boolean
    
 }
 interface Parameters{
-    keyword: String,
-    offset: String,
-    categories: String,
-    sources: String
+    keywords: string | ReadonlyURLSearchParams,  
+    offset: string,
+    categories: string | undefined,
+    source: String
 }
 export interface modifiedParameters extends Parameters{
+
     access_key: String ,
     
 }
@@ -34,4 +35,10 @@ interface Article{
 export interface AllData{
      pagination: Pagination,
      data: Article[],
+}
+export interface Details{
+    image: string,
+    description: String,
+    published_at: string,
+    title: String
 }
