@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/lib/themeprovider'
 export const metadata: Metadata = {
   title: 'News App',
   description: 'Created By Sehar ',
+  
 }
 
 export default function RootLayout({
@@ -17,6 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <body className='flex flex-col justify-center items-center'>
         <Header />
