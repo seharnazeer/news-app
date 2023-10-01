@@ -1,0 +1,25 @@
+[debug] [2023-10-01T08:41:33.441Z] ----------------------------------------------------------------------
+[debug] [2023-10-01T08:41:33.443Z] Command:       /usr/local/bin/firebase /home/sehar/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-10-01T08:41:33.443Z] CLI Version:   11.24.0
+[debug] [2023-10-01T08:41:33.443Z] Platform:      linux
+[debug] [2023-10-01T08:41:33.443Z] Node Version:  v16.16.0
+[debug] [2023-10-01T08:41:33.444Z] Time:          Sun Oct 01 2023 13:41:33 GMT+0500 (Pakistan Standard Time)
+[debug] [2023-10-01T08:41:33.444Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-01T08:41:33.518Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-01T08:41:33.519Z] > authorizing via signed-in user (seharnazeer75@gmail.com)
+[debug] [2023-10-01T08:41:33.519Z] [iam] checking project news-app-17abd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-01T08:41:33.521Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/news-app-17abd:testIamPermissions [none]
+[debug] [2023-10-01T08:41:33.521Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/news-app-17abd:testIamPermissions x-goog-quota-user=projects/news-app-17abd
+[debug] [2023-10-01T08:41:33.521Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/news-app-17abd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-01T08:41:35.123Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/news-app-17abd:testIamPermissions 200
+[debug] [2023-10-01T08:41:35.124Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/news-app-17abd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-01T08:41:35.125Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/news-app-17abd [none]
+[debug] [2023-10-01T08:41:35.822Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/news-app-17abd 200
+[debug] [2023-10-01T08:41:35.822Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/news-app-17abd {"projectId":"news-app-17abd","projectNumber":"810081722680","displayName":"news-app","name":"projects/news-app-17abd","resources":{"hostingSite":"news-app-17abd"},"state":"ACTIVE","etag":"1_0edeb667-d8b7-471c-be10-3900ea72940f"}
+[debug] [2023-10-01T08:42:01.631Z] TypeError: Cannot read properties of null (reading 'endsWith')
+    at ɵcodegenPublicDirectory (/home/sehar/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:206:56)
+    at async prepareFrameworks (/home/sehar/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:269:13)
+    at async deploy (/home/sehar/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/deploy/index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.

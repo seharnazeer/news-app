@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    suppressHydrationWarning:true,
     env: {
         MEDIA_STACK_API_KEY: '45979ef9e9dde6bed1d17c4633b38403',
      },
