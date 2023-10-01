@@ -16,6 +16,8 @@ export const getData=async ({queryparams,isdynamic}: QueryParameters)=>{
     {
         cache : isdynamic? 'no-cache': 'default',
         next: isdynamic? {revalidate: 0} : {revalidate: 30},
+        referrerPolicy: 'unsafe-url'
+
         
     })
     console.log(data.body);
